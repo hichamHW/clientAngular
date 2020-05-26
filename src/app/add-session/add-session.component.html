@@ -1,0 +1,74 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onAdd()">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Add Session</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Topic" formControlName="sujet">
+                        <mat-error *ngIf="addressForm.controls['sujet'].hasError('required')">
+                            Topic is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Speaker" formControlName="speaker">
+                        <mat-error *ngIf="addressForm.controls['speaker'].hasError('required')">
+                            speaker is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <mat-form-field>
+                        <mat-label>Start Date </mat-label>
+                        <input matInput formControlName="dateBegins" [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Start Time</mat-label>
+                        <input type="time" matInput formControlName="timeBegins" placeholder="Ex. Pizza" value="Sushi">
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>End Date</mat-label>
+                        <input matInput formControlName="dateFins" [matDatepicker]="picker2">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>End Time</mat-label>
+                        <input type="time" formControlName="dateFins" matInput placeholder="Ex. Pizza" value="Sushi">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="!addressForm.valid" type="submit">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

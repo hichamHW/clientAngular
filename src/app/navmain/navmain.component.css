@@ -1,0 +1,97 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.singupinput {
+    margin-right: 10px;
+}
+
+.BarHomeSide {
+    display: none;
+}
+
+.BarinputSearch {
+    color: rgb(109, 106, 106);
+    border: none;
+    margin-right: 25px;
+    border-radius: 100px;
+    background-color: white;
+    font-size: 15px;
+    padding: 5px 15px;
+    margin-left: 8px;
+    width: 180px;
+    height: 35px;
+    -webkit-appearance: none;
+    transition: width 0.4s ease-in-out;
+}
+
+.BarinputSearch:focus {
+    outline: none;
+    width: 250px;
+}
+
+.BarSearch {
+    align-content: center;
+}
+
+.BarHome {
+    margin-left: 30px;
+}
+
+@media(max-width:770px) {
+    .BarinputSearch:focus {
+        outline: none;
+        width: 180px;
+    }
+    .BarinputSearch {
+        margin-right: 70px;
+    }
+    .BarHome {
+        display: none;
+    }
+    .singupinput {
+        margin-right: 5px;
+    }
+    .BarHomeSide {
+        display: inline;
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/*
+@media (min-width:768px) {
+    .sidenav {
+        display: none;
+    }
+}
+*/
+
+.hidden {
+    display: none;
+}

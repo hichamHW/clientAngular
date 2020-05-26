@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>N° </th>
+            <th>Name Conference</th>
+            <th>organizer </th>
+            <th>Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let conference of Myconference">
+            <td>{{conference.id}}</td>
+            <td>{{conference.theme}}</td>
+            <td>{{conference.organizer}}</td>
+            <td>
+
+                <button type="button" class="btn btn-danger" (click)="deleteconference(conference.id)">Delete</button>
+
+                <button type="button" class="btn btn-primary" (click)="UpdateConference(conference.id)">Update</button>
+
+                <a class="btn btn-success" [routerLink]="['/ConferenceDetails/', conference.id]">Detail</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

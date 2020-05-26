@@ -1,0 +1,108 @@
+<div class="">
+    <ng2-slim-loading-bar color="red">
+    </ng2-slim-loading-bar>
+    <mat-sidenav-container class="sidenav-container">
+
+
+        <mat-sidenav #drawer class="sidenav" [(opened)]="openeed">
+            <mat-toolbar>Menu</mat-toolbar>
+            <mat-nav-list>
+                <div class="BarHomeSide">
+
+
+
+
+
+                    <a mat-list-item routerLink="/Home" routerLinkActive="active">Home</a>
+
+                    <a mat-list-item href="#"> Contact</a>
+                    <a mat-list-item routerLink="/Contact" routerLinkActive="active"> About US</a>
+
+
+                </div>
+
+
+
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+
+
+            <mat-toolbar color="primary">
+
+
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+                <span class="mx-md-3">GC</span>
+
+
+                <div class="BarHome">
+
+
+                    <a mat-list-item routerLink="/" routerLinkActive="active">Home</a>
+
+                    <a mat-list-item routerLink="/" routerLinkActive="active"> Contact</a>
+                    <a mat-list-item routerLink="/" routerLinkActive="active"> About US</a>
+
+
+                </div>
+                <span class="spacer"></span>
+                <div class="BarSearch">
+
+
+
+                    <form (ngSubmit)="sendData()">
+
+                        <input type="text" class="BarinputSearch" [(ngModel)]="keyword_search" placeholder="Search" name="Search">
+                    </form>
+
+
+
+
+
+                </div>
+
+                <div class="imageprofil" *ngIf="false">
+
+
+                    <img src="https://dummyimage.com/600x400/55595c/fff" style="height: 50px; width: 50px;" class="rounded-circle" alt="">
+
+                </div>
+                <button type="button" mat-raised-button data-toggle="modal" class="singupinput" (click)="signupdialog()"> Sign Up</button>
+                <button type="button" mat-raised-button (click)="registerdialog()" color="accent"> Sign Up</button>
+            </mat-toolbar>
+            <!-- Add Content Here -->
+
+            <ng-container>
+
+
+                <!----
+                  <mat-progress-bar mode="indeterminate">
+                 </mat-progress-bar>
+
+    <app-add-session></app-add-session>
+
+  -->
+
+
+
+
+
+
+
+
+
+
+
+                <router-outlet></router-outlet>
+
+
+
+
+            </ng-container>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

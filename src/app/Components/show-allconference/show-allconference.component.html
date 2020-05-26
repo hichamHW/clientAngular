@@ -1,0 +1,51 @@
+<div class=" container mx-md-5 my-md-5">
+    <mat-list-item>New Conference</mat-list-item>
+    <div class="col-md-12  my-5">
+        <div class="row">
+            <div class="col-4  col-md-4 col-lg-3 my-md-3 " *ngFor="let Conference of Conferences">
+                <a style=" text-decoration: none; " [routerLink]="['/ConferenceDetails/', Conference.id]">
+                    <img class="card-img-top" src="https://dummyimage.com/500/09f/fff.png" alt="Card image cap">
+
+                    <mat-card>
+                        <div class="row mx-1">
+
+
+                            <p style="font-size: 13px;">
+                                {{Conference.dateJoin |date}}
+
+
+                            </p>
+
+
+                        </div>
+                        <div class="row mx-1">
+
+                            <p style="font-size: 15px;">
+                                {{Conference.theme | uppercase}}
+
+
+                            </p>
+                        </div>
+
+
+
+
+
+
+
+
+                    </mat-card>
+                    <mat-divider style="background-color:#6200EE; height: 2px;"></mat-divider>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>

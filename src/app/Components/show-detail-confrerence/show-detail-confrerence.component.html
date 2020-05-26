@@ -1,0 +1,170 @@
+<div class="container my-md-4 ">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="wrapper wrapper-content animated fadeInUp">
+                <mat-card>
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="m-b-md">
+                                        <a href="#" *ngIf="false" class="btn btn-white btn-xs pull-right">Edit project</a>
+                                        <h2> </h2>
+                                    </div>
+                                    <dl class="dl-horizontal">
+                                        <dt>Status:</dt>
+                                        <dd>
+                                            <span class="badge badge-pill badge-success" *ngIf="conference.valide">Valid</span>
+
+                                            <span class="badge badge-pill badge-primary" *ngIf="!conference.valide">No Valid</span>
+
+
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <dl class="dl-horizontal">
+
+                                        <dt>Created by:</dt>
+                                        <dd>{{conference.profile.fullName | uppercase}}</dd>
+                                        <dt>Messages:</dt>
+                                        <dd> 162</dd>
+                                        <dt>organizer:</dt>
+                                        <dd>{{conference.organizer | uppercase}} </dd>
+                                        <dt>Version:</dt>
+                                        <dd> v1.4.2 </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-lg-7" id="cluster_info">
+                                    <dl class="dl-horizontal">
+
+                                        <dt>Date begin:</dt>
+                                        <dd>{{conference.dateDebut | date:'medium'}}</dd>
+                                        <dt>Date Fin:</dt>
+                                        <dd> {{conference.dateFin | date:'medium'}} </dd>
+                                        <dt>Speackers:</dt>
+                                        <dd class="project-people">
+                                            <a href=""><img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+                                            <a href=""><img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+                                            <a href=""><img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+                                            <a href=""><img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar4.png"></a>
+                                            <a href=""><img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar5.png"></a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <div class="row m-t-sm">
+                                <div class="col-lg-12">
+                                    <div class="panel blank-panel">
+                                        <div class="panel-heading">
+                                            <div class="panel-options">
+                                                <ul class="nav nav-tabs">
+
+
+                                                    <li class="active">
+                                                        <a href="" (click)="openTable()" style="text-decoration: none;" data-toggle="tab" aria-expanded="true">
+                                                  Session
+                                                </a>
+                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div [ngClass]="{'OpenTable': isOpentable , 'notOpentable':!isOpentable}" class="panel-body">
+
+                                            <div class="tab-content">
+
+                                                <div>
+
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Status</th>
+                                                                <th>Title</th>
+                                                                <th>Start Time</th>
+                                                                <th>End Time</th>
+                                                                <th>Speaker</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let session of sessionss">
+                                                                <td>
+                                                                    <span class="label label-primary"><i class="fa fa-check"></i> Completed</span>
+                                                                </td>
+                                                                <td>
+                                                                    {{session.sujet}}
+                                                                </td>
+                                                                <td>
+
+                                                                    {{session.dateDebut | date:'medium'}}
+                                                                </td>
+                                                                <td>
+                                                                    {{session.dateFin | date:'medium'}}
+                                                                </td>
+                                                                <td>
+                                                                    {{session.speaker}}
+                                                                </td>
+
+
+
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <mat-card>
+
+                <div class="wrapper wrapper-content project-manager">
+                    <h6> CONFERENCE DESCRIPTION </h6>
+
+                    <p class="small">
+                        {{conference.description}}
+                    </p>
+                    <p class="small font-bold">
+                        <span><i class="fa fa-circle text-warning"></i> High priority</span>
+                    </p>
+                    <h5>Project tag</h5>
+                    <ul class="tag-list" style="padding: 0">
+                        <li><input type="text" name="" id=""></li>
+                        <li><input type="text" name="" id=""></li>
+                        <li><input type="text" name="" id=""></li>
+                        <li><input type="text" name="" id=""></li>
+                    </ul>
+                    <h5>Project files</h5>
+                    <ul class="list-unstyled project-files">
+                        <li><a href="#"><i class="fa fa-file"></i> Project_document.docx</a></li>
+                        <li><a href="#"><i class="fa fa-file-picture-o"></i> Logo_zender_company.jpg</a></li>
+                        <li><a href="#"><i class="fa fa-stack-exchange"></i> Email_from_Alex.mln</a></li>
+                        <li><a href="#"><i class="fa fa-file"></i> Contract_20_11_2014.docx</a></li>
+                    </ul>
+                    <div class="text-center m-t-md">
+                        <a href="#" class="btn btn-xs btn-primary">Add files</a>
+                        <a href="#" class="btn btn-xs btn-primary mx-md-1">Report contact</a>
+
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

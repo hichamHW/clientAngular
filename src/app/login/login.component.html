@@ -1,0 +1,39 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row justify-content-md-center">
+        <h3>
+
+            Login
+        </h3>
+    </div>
+    <div class="row my-auto">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Email" email formControlName="email">
+                <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="addressForm.hasError('email') && !addressForm.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row  my-auto">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput type="password" placeholder="Password" formControlName="password">
+                <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row  mx-1  my-md-3">
+        <mat-checkbox color="primary">Remamber me!</mat-checkbox>
+    </div>
+    <div class="row justify-content-md-center my-md-1">
+        <button [disabled]="!addressForm.valid" type="button" mat-raised-button color="primary"> Sign Up</button>
+
+    </div>
+</form>
